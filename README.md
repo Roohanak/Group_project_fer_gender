@@ -10,7 +10,7 @@ with both PyTorch and TensorFlow, and k-Nearest Neighbors (KNN). Our work was co
 
 - **CNN_TensorFlow:** Similar to the PyTorch version, this directory holds the implementation of Convolutional Neural Networks using TensorFlow. Check the (Abraham pls add)file for comprehensive guidance on running and understanding the TensorFlow-based model.
 
-- **KNN:** Here, you will find the k-Nearest Neighbors implementation for facial recognition. Refer to the [Readme](Will pls add)] file within the directory for detailed instructions on running the KNN model.
+- **KNN:** Here, you will find the k-Nearest Neighbors implementation for facial recognition. Refer to the [README](/knn-model/knn-fer/README_KNN.md) file within the directory for detailed instructions on running the KNN model.
 
 - **SVM:** This directory includes the Support Vector Machines implementation for facial recognition. See the [README](SVM/README.md) file for instructions on running the SVM model.
 
