@@ -22,10 +22,10 @@ from concurrent.futures import ThreadPoolExecutor
 # if you are facing trouble please switch to single threading, see provided comments below.
 
 # filePath/to/train-folder
-training_file_path = 'C:/Users/William/PycharmProjects/Group_project_fer_gender/wvadnais/knn-fer/knn-fer-images/images/train'
+training_file_path = os.getcwd() +'\\knn-fer-images\\images\\train'
 
 # filePath/to/validation-folder
-validation_file_path = 'C:/Users/William/PycharmProjects/Group_project_fer_gender/wvadnais/knn-fer/knn-fer-images/images/validation'
+validation_file_path = os.getcwd() +'\\knn-fer-images\\images\\validation'
 
 
 #################################################################################################################
@@ -59,18 +59,18 @@ def test_k_values(X_training, y_training, X_test, y_test, metric):
     k_values = [1, 3, 7, 10, 20, 50, 100]
     accuracies = {}
 
-    # # for single threading
-    # for k in k_values:
-    #     run(X_test, X_training, accuracies, k, metric, y_test, y_training)
-
-    # for multithread processing, BE CAREFUL! dont apply multithread anywhere else unless you understand your system
-    def run_thread(k):
+    # for single threading
+    for k in k_values:
         run(X_test, X_training, accuracies, k, metric, y_test, y_training)
 
-    with ThreadPoolExecutor(max_workers=8) as executor:
-        time.sleep(1)
-        executor.map(run_thread, k_values)
-
+    # # for multithread processing, BE CAREFUL! dont apply multithread anywhere else unless you understand your system
+    # def run_thread(k):
+    #     run(X_test, X_training, accuracies, k, metric, y_test, y_training)
+    #
+    # with ThreadPoolExecutor(max_workers=8) as executor:
+    #     time.sleep(1)
+    #     executor.map(run_thread, k_values)
+    #
     return accuracies
 
 
@@ -152,7 +152,7 @@ def get_graphed_result_w_test_size(X_training, y_training, size):
     plt.legend(loc='upper right')
     plt.grid(True)
     plt.draw()
-    plt.savefig('knn-fer-images/output-graphs/graph_sample_sizing-' + str(size * 35000) + '.png')
+    plt.savefig(os.getcwd()+'\\knn-fer-images\\output-graphs\\graph_sample_sizing-' + str(size * 35000) + '.png')
     time.sleep(3)
     print('\n\n#############  STARTING NEXT TEST SIZE  #############\n\n')
 
